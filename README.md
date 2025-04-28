@@ -1,8 +1,10 @@
 # Wallet Demo Login Flow
 
+I called it Nova Wallet, it's a simple wallet for your crypto needs.
 This project demonstrates a simple login flow for a wallet application. It is designed to showcase authentication and user session management in a secure and user-friendly manner.
 
 Made using Nextjs, Tailwindv4 and deployed in vercel. 
+It has a basic testing layer and SEO configuration
 
 ## Prerequisites
 
