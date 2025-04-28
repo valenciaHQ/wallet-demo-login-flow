@@ -51,7 +51,7 @@ export default function Home() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <Link href="/signup">
+          <Link href="/sign-up">
             <Button className="signup-button min-w-36 text-lg">
               Create Wallet
               <svg
