@@ -6,13 +6,6 @@ import { useState } from "react";
 import StepIndicator from "@/components/SignupFlow/StepIndicator";
 import PersonalInfoForm from "@/components/SignupFlow/PersonalnfoForm/PersonalInfoForm";
 import SuccessPage from "@/components/SignupFlow/SuccessPage";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Nova Wallet | Sign up",
-  description:
-    "Nova Wallet | A simple wallet for your crypto needs - Sign up now!",
-};
 
 const Signup = () => {
   const [currentStep, setCurrentStep] = useState(0);
