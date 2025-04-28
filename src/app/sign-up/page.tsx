@@ -5,6 +5,7 @@
 import { useState } from "react";
 import StepIndicator from "@/components/SignupFlow/StepIndicator";
 import PersonalInfoForm from "@/components/SignupFlow/PersonalInfoForm";
+import SuccessPage from "@/components/SignupFlow/SuccessPage";
 
 const Signup = () => {
   const [currentStep, setCurrentStep] = useState(0);
@@ -61,7 +62,7 @@ const Signup = () => {
             />
           )}
 
-          {currentStep === 1 && <p>Success!</p>}
+          {currentStep === 1 && <SuccessPage />}
         </div>
 
         <div className="text-center mt-6 text-sm text-muted-foreground">
