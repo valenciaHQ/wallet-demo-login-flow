@@ -29,7 +29,7 @@ const StepIndicator = ({
           <div key={i} className="flex flex-col items-center">
             <div
               className={cn(
-                "w-8 h-8 rounded-full flex items-center justify-center text-xs font-medium transition-all duration-300",
+                "w-8 h-8 rounded-full flex items-center justify-center text-xs font-medium transition-all duration-2000",
                 i < currentStep
                   ? "bg-primary text-primary-foreground"
                   : i === currentStep
