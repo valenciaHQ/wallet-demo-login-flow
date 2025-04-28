@@ -4,7 +4,7 @@
 
 import { useState } from "react";
 import StepIndicator from "@/components/SignupFlow/StepIndicator";
-import PersonalInfoForm from "@/components/SignupFlow/PersonalInfoForm";
+import PersonalInfoForm from "@/components/SignupFlow/PersonalnfoForm/PersonalInfoForm";
 import SuccessPage from "@/components/SignupFlow/SuccessPage";
 
 const Signup = () => {

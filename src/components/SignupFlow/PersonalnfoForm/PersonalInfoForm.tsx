@@ -116,7 +116,6 @@ const PersonalInfoForm = ({ onContinue, onBack }: PersonalInfoFormProps) => {
               placeholder="John"
               value={formData.firstName}
               onChange={handleChange}
-              required
             />
           </div>
 
@@ -128,7 +127,6 @@ const PersonalInfoForm = ({ onContinue, onBack }: PersonalInfoFormProps) => {
               placeholder="Doe"
               value={formData.lastName}
               onChange={handleChange}
-              required
             />
           </div>
         </div>
@@ -166,7 +164,6 @@ const PersonalInfoForm = ({ onContinue, onBack }: PersonalInfoFormProps) => {
             placeholder="john.doe@example.com"
             value={formData.email}
             onChange={handleChange}
-            required
           />
         </div>
 
@@ -178,7 +175,6 @@ const PersonalInfoForm = ({ onContinue, onBack }: PersonalInfoFormProps) => {
             placeholder="+1 (555) 123-4567"
             value={formData.phone}
             onChange={handleChange}
-            required
           />
         </div>
 
@@ -192,7 +188,7 @@ const PersonalInfoForm = ({ onContinue, onBack }: PersonalInfoFormProps) => {
               <SelectValue placeholder="Select identification document" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="passport">Passport</SelectItem>
+              <SelectItem value="pass">Passport</SelectItem>
               <SelectItem value="drivers-license">
                 Driver&apos;s License
               </SelectItem>
@@ -262,9 +258,6 @@ const PersonalInfoForm = ({ onContinue, onBack }: PersonalInfoFormProps) => {
                     <rect width="6" height="6" x="16" y="2" rx="1"></rect>
                     <path d="m9 14 2 2 4-4"></path>
                   </svg>
-                  <span className="text-sm font-medium">
-                    Upload ID document
-                  </span>
                   <span className="text-xs text-muted-foreground mt-1">
                     Click to browse
                   </span>
