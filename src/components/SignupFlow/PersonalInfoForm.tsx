@@ -19,6 +19,8 @@ interface PersonalInfoFormProps {
   onBack: () => void;
 }
 
+const unavailableCountries = ["ur", "br", "co", "ec"];
+
 const PersonalInfoForm = ({ onContinue, onBack }: PersonalInfoFormProps) => {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -26,6 +28,7 @@ const PersonalInfoForm = ({ onContinue, onBack }: PersonalInfoFormProps) => {
     email: "",
     phone: "",
     documentType: "",
+    country: "",
   });
 
   const [frontImage, setFrontImage] = useState<File | null>(null);
@@ -57,20 +60,35 @@ const PersonalInfoForm = ({ onContinue, onBack }: PersonalInfoFormProps) => {
       !formData.email ||
       !formData.phone ||
       !formData.documentType ||
+      !formData.country ||
       !frontImage
     ) {
       toast.error("Please fill out all fields");
       return;
     }
 
-    // Email validation
+    if (unavailableCountries.some((country) => formData.country === country)) {
+      toast.error("We are not available in your country");
+      return;
+    }
+
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       toast.error("Please enter a valid email address");
       return;
     }
 
-    // Simulate API call
+    const storedEmails = JSON.parse(
+      localStorage.getItem("submittedEmails") || "[]"
+    );
+    if (storedEmails.includes(formData.email)) {
+      toast.error("This email has already been taken");
+      return;
+    }
+
+    storedEmails.push(formData.email);
+    localStorage.setItem("submittedEmails", JSON.stringify(storedEmails));
+
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
@@ -113,6 +131,30 @@ const PersonalInfoForm = ({ onContinue, onBack }: PersonalInfoFormProps) => {
               required
             />
           </div>
+        </div>
+
+        <div className="space-y-2">
+          <Label htmlFor="country">Country</Label>
+          <Select
+            value={formData.country}
+            onValueChange={(value) => handleSelectChange("country", value)}
+          >
+            <SelectTrigger id="country" className="w-full">
+              <SelectValue placeholder="Select your country" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="us">United States</SelectItem>
+              <SelectItem value="ur">Uruguay</SelectItem>
+              <SelectItem value="ar">Argentina</SelectItem>
+              <SelectItem value="br">Brazil</SelectItem>
+              <SelectItem value="co">Colombia</SelectItem>
+              <SelectItem value="ec">Ecuador</SelectItem>
+              <SelectItem value="uk">United Kingdom</SelectItem>
+              <SelectItem value="au">Australia</SelectItem>
+              <SelectItem value="in">India</SelectItem>
+              {/* Add more countries as needed */}
+            </SelectContent>
+          </Select>
         </div>
 
         <div className="space-y-2">

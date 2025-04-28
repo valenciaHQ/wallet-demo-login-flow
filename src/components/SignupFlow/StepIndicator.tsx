@@ -15,7 +15,6 @@ const StepIndicator = ({
 }: StepIndicatorProps) => {
   return (
     <div className="w-full mb-8">
-      {/* Progress bar */}
       <div className="relative h-1 w-full bg-muted rounded-full overflow-hidden mb-4">
         <div
           className="h-full bg-gradient-to-r from-primary to-secondary transition-all duration-500 ease-out"
@@ -23,7 +22,6 @@ const StepIndicator = ({
         />
       </div>
 
-      {/* Step indicators and labels */}
       <div className="flex justify-between">
         {Array.from({ length: totalSteps }).map((_, i) => (
           <div key={i} className="flex flex-col items-center">
