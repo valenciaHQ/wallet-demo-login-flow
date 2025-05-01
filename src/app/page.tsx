@@ -1,5 +1,6 @@
 /** @format */
 
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -47,8 +48,42 @@ export default function Home() {
         </h1>
 
         <p className="text-xl text-muted-foreground mb-8 max-w-md mx-auto">
-          The next generation digital wallet for your financial journey
+          The ultimate digital wallet for sports fans and event attendees
         </p>
+
+        <div className="relative mx-auto max-w-md mb-8 overflow-hidden">
+          <div className="p-4 rounded-lg bg-gradient-to-r from-amber-50 to-amber-100 border border-amber-200 relative">
+            <div className="absolute top-0 right-0">
+              <Badge className="m-2 bg-gradient-to-r from-amber-400 to-orange-400 border-0">
+                Limited Time
+              </Badge>
+            </div>
+            <div className="flex items-center gap-3 mb-2">
+              <div className="p-2 rounded-full bg-amber-100">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="text-amber-600"
+                >
+                  <circle cx="12" cy="8" r="7"></circle>
+                  <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                </svg>
+              </div>
+              <h3 className="font-medium text-amber-800">Sports Fan Bonus</h3>
+            </div>
+            <p className="text-sm text-amber-700">
+              Attending a sports event? Sign up now and enter your ticket code
+              for exclusive rewards!
+            </p>
+          </div>
+        </div>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
           <Link href="/sign-up">
@@ -121,8 +156,9 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="p-5 rounded-lg border border-border bg-card hover:shadow-md transition-shadow">
-            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 mx-auto">
+          <div className="p-5 rounded-lg border border-border bg-card hover:shadow-md transition-shadow relative overflow-hidden">
+            <div className="absolute -right-6 -top-6 w-12 h-12 rounded-full bg-amber-100 opacity-70"></div>
+            <div className="w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center mb-4 mx-auto relative">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -133,15 +169,19 @@ export default function Home() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="text-primary"
+                className="text-amber-600"
               >
-                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                <circle cx="12" cy="8" r="7"></circle>
+                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
               </svg>
             </div>
-            <h3 className="text-lg font-medium mb-2">Smart Analytics</h3>
+            <h3 className="text-lg font-medium mb-2">Sports Fan Bonuses</h3>
             <p className="text-sm text-muted-foreground">
-              Track your spending patterns and optimize your finances
+              Special rewards for sports event attendees
             </p>
+            <Badge className="mt-2 bg-gradient-to-r from-amber-400 to-orange-400 border-0">
+              New
+            </Badge>
           </div>
         </div>
       </div>

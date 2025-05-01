@@ -4,6 +4,7 @@
 
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import SportsEventBonus from "../SportEventBonus";
 
 const SuccessPage = () => {
   const router = useRouter();
@@ -34,7 +35,7 @@ const SuccessPage = () => {
         information and will notify you once your account is ready.
       </p>
 
-      <div className="bg-muted/50 rounded-lg p-6 mb-8">
+      <div className="bg-muted/50 rounded-lg p-6">
         <h3 className="font-medium mb-4">What happens next?</h3>
         <div className="space-y-4">
           <div className="flex">
@@ -74,6 +75,8 @@ const SuccessPage = () => {
           </div>
         </div>
       </div>
+
+      <SportsEventBonus />
 
       <Button onClick={() => router.push("/")} className="signup-button">
         Return to Home
